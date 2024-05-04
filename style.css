@@ -126,7 +126,8 @@ footer > p {
     width: 100%;
 }
 
-@media (max-width: 1260px) {
+@media (max-width: 1440px) {
+       
     .nav-container {
         flex-direction: column;
         text-align: center;
@@ -173,6 +174,9 @@ footer > p {
 
 }  
   
-
+@media only screen and (max-width: 600px) {
+    
+    
+}
 
 
