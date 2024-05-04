@@ -121,6 +121,10 @@ footer > p {
     width: 100%;
 }
 
+.invisbullet {
+    padding-left: 20px;
+}
+
 @media (max-width: 1440px) {
        
     .nav-container {
@@ -202,7 +206,7 @@ footer > p {
         display: flex;
         flex-direction: column;
         justify-content: right;
-        padding-left: 15rem;
+        padding-left: 5rem;
         padding-top: 0px;
     }
 
@@ -210,6 +214,19 @@ footer > p {
         display: flex;
         flex-direction: column;
         justify-content: left;
+    }
+
+    .main {
+        padding-left: 5rem;
+    }
+
+    .top_spacer {
+        height: 0vh;
+    }
+
+    .icons > a > img {
+        width: 2.5rem;
+        padding: 1rem;
     }
 }
   
