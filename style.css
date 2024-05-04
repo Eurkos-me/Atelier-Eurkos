@@ -166,12 +166,19 @@ footer > p {
         width: 2.5rem;
         padding: 0px 1rem;
     }
+    
+    @media screen and (orientation: landscape) {
+        .nav-container {
+            flex-direction: column;
+            height: 100%;
+        }
+
+        body {
+            padding-left: 0.5rem;
+        }
+    }
 
 }  
   
-@media only screen and (max-width: 600px) {
-    
-    
-}
 
 
