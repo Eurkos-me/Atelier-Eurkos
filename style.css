@@ -18,10 +18,12 @@ body {
 
 a {
     text-decoration: none;
+    color: #005761;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #0291a1;
 }
 
 footer {
@@ -234,6 +236,11 @@ footer > p {
     .icons {
         display: flex;
         justify-content: center;
+    }
+}
+@media (max-width: 600px) {
+    .nav-container {
+        position: relative;
     }
 }
   
