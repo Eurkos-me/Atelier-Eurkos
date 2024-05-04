@@ -40,6 +40,10 @@ footer {
     font-family: "Bebas Neue", sans-serif;
 }
 
+
+
+
+
 .nav {
     background-color: #435334;
     color: #9EB384;
@@ -59,7 +63,7 @@ footer {
 
 .left {
     text-align: center;
-    width: 20%;
+    width: 20%; 
 }
 
 .center {
@@ -171,13 +175,34 @@ footer > p {
         .nav-container {
             display: flex;
             flex-direction: column;
-            width: 15%;
+            position: fixed;
+            height: 100%;
+            width: 15rem;
             align-items: left;
             font-family: "Bebas Neue", sans-serif;
         }
 
         body {
             padding-left: 0.5rem;
+        }
+
+        .left {
+            text-align: center;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .right {
+            text-align: center;
+        }
+
+        .nav {
+            background-color: #435334;
+            color: #9EB384;
+            font-size: 3rem;
+            font-weight: 400;
         }
     }
 
