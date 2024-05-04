@@ -162,57 +162,55 @@ footer > p {
         padding: 0px 1rem;
     }
     
-    @media screen and (orientation: landscape) {
-        .nav-container {
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            height: 100%;
-            width: 15rem;
-            align-items: left;
-            font-family: "Bebas Neue", sans-serif;
-            padding: 0px;
-        }
+    
 
-        .nav {
-            background-color: #435334;
-            color: #9EB384;
-            font-size: 2rem;
-            font-weight: 300;
-            vertical-align: top;
-        }
+}
 
-        .left {
-            text-align: center;
-        }
-        
-        .center {
-            text-align: center;
-        }
-        
-        .right {
-            text-align: center;
-        }
-
-        .left-spacer {
-            width: 20rem;
-        }
-
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: right;
-            padding-left: 20rem;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: left;
-        }
+@media (orientation: landscape) and (max-width: 1440px) {
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 8rem;
+        align-items: left;
+        font-family: "Bebas Neue", sans-serif;
+        padding: 0px;
     }
 
-}  
+    .nav {
+        background-color: #435334;
+        color: #9EB384;
+        font-size: 2rem;
+        font-weight: 300;
+        vertical-align: top;
+    }
+
+    .left {
+        text-align: center;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    .right {
+        text-align: center;
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        padding-left: 30rem;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+}
   
 
 
