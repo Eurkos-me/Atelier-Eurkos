@@ -166,6 +166,10 @@ footer > p {
         height: 20vh;
     }
 
+    .icons > a > img {
+        width: 2.5rem;
+    }
+
 }  
   
 
