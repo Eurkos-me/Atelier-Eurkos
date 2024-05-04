@@ -198,9 +198,9 @@ footer > p {
             width: 20rem;
         }
 
-        .content {
-            display: grid;
-            grid-template-columns: 20rem 95% 2.5%;
+        .content-container {
+            display: flex;
+            flex-direction: column;
         }
     }
 
