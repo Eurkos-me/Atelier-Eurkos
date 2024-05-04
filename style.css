@@ -201,6 +201,14 @@ footer > p {
         .content-container {
             display: flex;
             flex-direction: column;
+            justify-content: right;
+            padding-left: 20rem;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
         }
     }
 
