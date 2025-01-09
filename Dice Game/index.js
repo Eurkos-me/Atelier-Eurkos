@@ -12,17 +12,26 @@ function changeDie2() {
 
 function declareWinner() {
     if (randomNumber1 === randomNumber2) {
-        document.querySelector("h1").textContent="It's a tie!"
+        document.querySelector("p.winner").textContent="It's a tie!"
     } else if (randomNumber1 > randomNumber2) {
-        document.querySelector("h1").textContent="Player 1 wins!"
+        document.querySelector("p.winner").textContent="Player 1 wins!"
     } else if (randomNumber2 > randomNumber1) {
-        document.querySelector("h1").textContent="Player 2 wins!"
+        document.querySelector("p.winner").textContent="Player 2 wins!"
     }
 }
 
-var randomNumber1 = random();
-var randomNumber2 = random();
+var randomNumber1 = "";
+var randomNumber2 = "";
 
-changeDie1();
-changeDie2();
-declareWinner();
+function roll() {
+    randomNumber1 = random();
+    randomNumber2 = random();
+    changeDie1();
+    changeDie2();
+    declareWinner();
+    document.querySelector("button.play").textContent="Roll Again"
+}
+
+
+
+
