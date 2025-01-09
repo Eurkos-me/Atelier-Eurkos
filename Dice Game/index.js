@@ -13,15 +13,24 @@ function changeDie2() {
 function declareWinner() {
     if (randomNumber1 === randomNumber2) {
         document.querySelector("p.winner").textContent="It's a tie!"
+        ties++;
+        document.querySelector(".tally3").textContent=ties
     } else if (randomNumber1 > randomNumber2) {
         document.querySelector("p.winner").textContent="Player 1 wins!"
+        playerOneWins++;
+        document.querySelector(".tally1").textContent=playerOneWins
     } else if (randomNumber2 > randomNumber1) {
         document.querySelector("p.winner").textContent="Player 2 wins!"
+        playerTwoWins++;
+        document.querySelector(".tally2").textContent=playerTwoWins
     }
 }
 
 var randomNumber1 = "";
 var randomNumber2 = "";
+var playerOneWins = 0;
+var playerTwoWins = 0;
+var ties = 0;
 
 function roll() {
     randomNumber1 = random();

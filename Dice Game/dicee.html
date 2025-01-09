@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
       rel="stylesheet"
     />
-    <script src="index.js"></script>
+    
   </head>
   <body>
     <div class="container">
@@ -26,16 +26,25 @@
       
       <div class="dice">
         <p>Player 1</p>
+        <p>Wins: <span class="tally1">0</span></p>
         <img class="img1" src="./images/dice6.png" />
       </div>
 
       <div class="dice">
         <p>Player 2</p>
+        <p>Wins: <span class="tally2">0</span></p>
         <img class="img2" src="./images/dice6.png" />
       </div>
     </div>
+    <br />
 
-    <script src="index.js">changeDie1();</script>
+    <div class="dice">
+      <p class="log"></p>
+    </div>
+
+
+
+    <script src="index.js"></script>
 
   </body>
 </html>
