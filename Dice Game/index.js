@@ -1,3 +1,9 @@
+var randomNumber1 = "";
+var randomNumber2 = "";
+var playerOneWins = 0;
+var playerTwoWins = 0;
+var ties = 0;
+
 function random() {
     return Math.floor(Math.random() * 6) + 1;
 }
@@ -26,12 +32,6 @@ function declareWinner() {
     }
 }
 
-var randomNumber1 = "";
-var randomNumber2 = "";
-var playerOneWins = 0;
-var playerTwoWins = 0;
-var ties = 0;
-
 function roll() {
     randomNumber1 = random();
     randomNumber2 = random();
@@ -40,7 +40,6 @@ function roll() {
     declareWinner();
     document.querySelector("button.play").textContent="Roll Again"
 }
-
 
 
 

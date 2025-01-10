@@ -7,7 +7,6 @@
 .dice {
   text-align: center;
   display: inline-block;
-
 }
 
 .play {
@@ -45,7 +44,7 @@ body {
 }
 
 h1 {
-  margin: 3rem;
+  margin-bottom: 0px;
   font-family: 'Lobster', cursive;
   text-shadow: 5px 0 #232931;
   font-size: 5rem;
@@ -59,7 +58,8 @@ p {
 }
 
 img {
-  width: 80%;
+  width: 50%;
+  
 }
 
 footer {
