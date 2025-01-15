@@ -31,17 +31,15 @@ $(document).keypress(function () {
     }
 });
 
-for (var i = 0; i < document.querySelectorAll(".btn").length; i++) {
-    document.querySelectorAll(".btn")[i].addEventListener("touchend", function () {
-        var userChosenColor = $(this).attr("id");
-        userClickedPattern.push(userChosenColor);
-        animatePress(userChosenColor);
-        playSound(userChosenColor);
-        checkAnswer(userClickedPattern.length-1)
-    });
-}
+$('.btn').on('tap', function buttonTouch() {
+    var userChosenColor = $(this).attr("id");
+    userClickedPattern.push(userChosenColor);
+    animatePress(userChosenColor);
+    playSound(userChosenColor);
+    checkAnswer(userClickedPattern.length-1)
+});
 
-document.addEventListener('touchend', function(e) {
+$document.on('tap', function(e) {
     if (!started) {
         $('#level-title').text("Level " + level);
         nextSequence();
