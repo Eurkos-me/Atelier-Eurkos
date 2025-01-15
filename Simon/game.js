@@ -31,31 +31,6 @@ $(document).keypress(function () {
     }
 });
 
-$('.btn').on('tap', function buttonTouch() {
-    var userChosenColor = $(this).attr("id");
-    userClickedPattern.push(userChosenColor);
-    animatePress(userChosenColor);
-    playSound(userChosenColor);
-    checkAnswer(userClickedPattern.length-1)
-});
-
-$document.on('tap', function(e) {
-    if (!started) {
-        $('#level-title').text("Level " + level);
-        nextSequence();
-        started = true;
-        $(".container").removeClass("hidden");
-        $("#rules").addClass("hidden");
-    } else if (gameOver) {
-        gameOver = false;
-        started = true;
-        $('#level-title').text("Level " + level);
-        nextSequence();
-        $(".container").removeClass("hidden");
-        $("#rules").addClass("hidden"); 
-    }
-}, false);
-
 function nextSequence () {
     userClickedPattern = [];
     var randomNumber = Math.floor(Math.random() * 4);
@@ -104,12 +79,6 @@ function startOver () {
     started = false;
     $(".container").addClass("hidden");
     $("#rules").removeClass("hidden");
-}
-
-function showRules() {
-    $(".container").fadeTo("slow", 0.8, function() {
-        // Animation complete.
-      });
 }
 
 
