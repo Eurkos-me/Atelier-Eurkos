@@ -19,11 +19,15 @@ $(document).keypress(function () {
         $('#level-title').text("Level " + level);
         nextSequence();
         started = true;
+        $(".container").removeClass("hidden");
+        $("#rules").addClass("hidden");
     } else if (gameOver) {
         gameOver = false;
         started = true;
         $('#level-title').text("Level " + level);
-        nextSequence(); 
+        nextSequence();
+        $(".container").removeClass("hidden");
+        $("#rules").addClass("hidden"); 
     }
 });
 
@@ -73,6 +77,14 @@ function startOver () {
     level = 0
     gamePattern = [];
     started = false;
+    $(".container").addClass("hidden");
+    $("#rules").removeClass("hidden");
+}
+
+function showRules() {
+    $(".container").fadeTo("slow", 0.8, function() {
+        // Animation complete.
+      });
 }
 
 
