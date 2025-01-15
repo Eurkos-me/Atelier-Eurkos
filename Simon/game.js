@@ -31,6 +31,33 @@ $(document).keypress(function () {
     }
 });
 
+for (var i = 0; i < document.querySelectorAll(".btn").length; i++) {
+    document.querySelectorAll(".btn")[i].addEventListener("touchend", function () {
+        var userChosenColor = $(this).attr("id");
+        userClickedPattern.push(userChosenColor);
+        animatePress(userChosenColor);
+        playSound(userChosenColor);
+        checkAnswer(userClickedPattern.length-1)
+    });
+}
+
+document.addEventListener('touchend', function(e) {
+    if (!started) {
+        $('#level-title').text("Level " + level);
+        nextSequence();
+        started = true;
+        $(".container").removeClass("hidden");
+        $("#rules").addClass("hidden");
+    } else if (gameOver) {
+        gameOver = false;
+        started = true;
+        $('#level-title').text("Level " + level);
+        nextSequence();
+        $(".container").removeClass("hidden");
+        $("#rules").addClass("hidden"); 
+    }
+}, false);
+
 function nextSequence () {
     userClickedPattern = [];
     var randomNumber = Math.floor(Math.random() * 4);
@@ -51,7 +78,7 @@ function checkAnswer (currentLevel) {
         }
     } else {
         playSound("wrong");
-        $('#level-title').text("Game Over, Press Any Key to Restart.");
+        $('#level-title').text("Game Over! Tap or Press Any Key to Restart.");
         $("body").addClass("game-over");
         setTimeout(function () {
             $("body").removeClass("game-over");
