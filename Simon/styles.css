@@ -23,8 +23,7 @@ body {
   border: 10px solid black;
   border-radius: 20%;
   text-align: center;
-  padding: 15px;
-  font-size-adjust: 1;
+  font-size: 1.1rem;
 }​
 
 .container {
@@ -40,22 +39,6 @@ body {
   width: 200px;
   border: 10px solid black;
   border-radius: 20%;
-}
-
-.help {
-  margin: 25px;
-  display: inline-block;
-  height: 35px;
-  width: 120px;
-  border: 2px solid black;
-  border-radius: 20%;
-  background-color: #FEF2BF;
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 20px;
-  font-size: 1rem;
-  font-family: 'Press Start 2P', cursive;
-  font-weight: bolder;
 }
 
 .game-over {
