@@ -81,6 +81,12 @@ function startOver () {
     $("#rules").removeClass("hidden");
 }
 
+function showRules() {
+    $(".container").fadeTo("slow", 0.8, function() {
+        // Animation complete.
+      });
+}
+
 
 
 
