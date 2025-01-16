@@ -6,7 +6,7 @@ var started = false;
 var gameOver = false;
 var level = 0;
 
-$("div.btn").on("click", function(){
+$("div.btn").on("click", function() {
     var userChosenColor = $(this).attr("id");
     userClickedPattern.push(userChosenColor);
     animatePress(userChosenColor);
@@ -31,6 +31,23 @@ $(document).keypress(function () {
     }
 });
 
+$("#rules").on("click", function () {
+    if (!started) {
+        $('#level-title').text("Level " + level);
+        nextSequence();
+        started = true;
+        $(".container").removeClass("hidden");
+        $("#rules").addClass("hidden");
+    } else if (gameOver) {
+        gameOver = false;
+        started = true;
+        $('#level-title').text("Level " + level);
+        nextSequence();
+        $(".container").removeClass("hidden");
+        $("#rules").addClass("hidden"); 
+    }
+});
+
 function nextSequence () {
     userClickedPattern = [];
     var randomNumber = Math.floor(Math.random() * 4);
@@ -39,7 +56,8 @@ function nextSequence () {
     $("#" + randomChosenColor).fadeIn(250).fadeOut(250).fadeIn(250);
     playSound(randomChosenColor);
     level++;
-    $('#level-title').text("Level " + level)    
+    $('#level-title').text("Level " + level);
+    $('#message').text("");    
 };
 
 function checkAnswer (currentLevel) {
@@ -51,7 +69,8 @@ function checkAnswer (currentLevel) {
         }
     } else {
         playSound("wrong");
-        $('#level-title').text("Game Over! You reached Level " + level + "!");
+        $('#level-title').text("Game Over!");
+        $('#message').text("You reached Level " + level + "!");
         $("body").addClass("game-over");
         setTimeout(function () {
             $("body").removeClass("game-over");
