@@ -14,6 +14,14 @@ $("div.btn").on("click", function() {
     checkAnswer(userClickedPattern.length-1)
 });
 
+$('div.btn').on('tap', function() { 
+    var userChosenColor = $(this).attr("id");
+    userClickedPattern.push(userChosenColor);
+    animatePress(userChosenColor);
+    playSound(userChosenColor);
+    checkAnswer(userClickedPattern.length-1)
+});
+
 $(document).keypress(function () {
     if (!started) {
         $('#level-title').text("Level " + level);
@@ -32,6 +40,23 @@ $(document).keypress(function () {
 });
 
 $("#rules").on("click", function () {
+    if (!started) {
+        $('#level-title').text("Level " + level);
+        nextSequence();
+        started = true;
+        $(".container").removeClass("hidden");
+        $("#rules").addClass("hidden");
+    } else if (gameOver) {
+        gameOver = false;
+        started = true;
+        $('#level-title').text("Level " + level);
+        nextSequence();
+        $(".container").removeClass("hidden");
+        $("#rules").addClass("hidden"); 
+    }
+});
+
+$("#rules").on("tap", function () {
     if (!started) {
         $('#level-title').text("Level " + level);
         nextSequence();
