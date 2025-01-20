@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Inter', sans-serif;
+    src: url(../../global/css/fonts/Inter.ttc);
+}
+
+@font-face {
+    font-family: 'Inter-variable', sans-serif;
+    src: url(../../global/css/fonts/InterVariable.ttf);
+}
+
+body {
+    background-color: #162417;
+    color: #bfd3c0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0px;
+}
+
+#nav {
+    margin-top: 100px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;      
+}
+
+#left {
+    background-color: #162417;
+    position: fixed;
+    width: 30%;
+    padding: 80px;
+    margin-left: 5%;
+}
+
+#right {
+    background-color: #162417;
+    position: relative;
+    margin-left: 45%;
+    margin-right: 16%;
+    width: 50%;
+    padding: 80px 0px 0px 10px;
+    line-height: 1.6;
+}
+
+.nav_link {
+    color: #b0c2b1;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.nav_link:hover {
+    color: #fff;
+}
+
+.content_link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content_link:hover {
+    color: #83ff8b;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+
+.clicked {
+    color: #fff;
+}
+
+.exp_block {
+    background-color: #1d321e;
+    width: 700px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    overflow-wrap: normal;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    border-width: 10px;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.exp_block:hover {
+    opacity: 1;
+    background-color: #1d321e;
+    border-color:#1d321e;
+    border-width: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.exp_item1 {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    text-transform: uppercase;
+    padding-top: 5px;
+}
+
+.exp_item2 {
+    width: 550px;
+    grid-column: 2;
+    grid-row: 1 / 4;
+    overflow-wrap: break-word;
+    padding-right: 15px;
+}
+
+.exp_item3 {
+    grid-column: 2;
+    grid-row: 4;
+    
+}
+
+.exp_tag {
+    color: #ddfddf;
+    background-color: #308435;
+    border: 0;
+    border-radius: 25px;
+    height: 22px;
+    font-size: smaller;
+    margin: 5px 0px 0px 0px;
+    padding: 5px;
+}
+
+.exp_header {
+    font-size: 1rem;
+    font-weight: 600;
+}
