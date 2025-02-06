@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Store Technology - Back Office PC Setup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/docs.css" />
+</head>
+
+<body>
+    <a id="top"></a>
+    <!-- start nav bar-->
+    <div class="nav-bar">
+        <img class="title-logo" src="../images/burlBlogo.png">
+        <span class="brand-title">Store Technology Portal</span>
+        <div class="nav-icon"><a href="../"><img src="../images/home.svg"></a></div>
+        <div class="nav-icon"><a href="../calendar/calendar.html"><img src="../images/calendar.svg"></a></div>
+        <div>  
+            <ul class="nav-menu">
+                <li class="nav-drop">
+                    <a href="javascript:void(0)" class="nav-drop-btn">PROJECTS</a>
+                    <div class="nav-drop-content">
+                        <p>Active</p>
+                        <a href="#">HPE ML110 Server Refresh</a>
+                        <a href="#">Verifone M440 Payment Terminal Refresh</a>
+                        <hr>
+                        <p>Closed</p>
+                        <a href="#">Xstore Deployment</a>
+                        <a href="#">2023 Store onsite Refresh</a>
+                        <a href="#">2022 Store onsite Refresh</a> 
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="nav-menu">
+                <li class="nav-drop">
+                    <a href="javascript:void(0)" class="nav-drop-btn">DOCUMENTS</a>
+                    <div class="nav-drop-content">
+                        <p>Process</p>
+                        <a href="#">New Register Configuration</a>
+                        <a href="#">Back Office PC Configuration</a>
+                        <hr>
+                        <p>Quick Reference</p>
+                        <a href="#">Device Lockdown with IVY</a>
+                        <a href="#">Register Connection Diagram</a>
+                        <a href="#">Ultra VNC</a> 
+                        <a href="#">BigFix</a>
+                        <a href="#">AirWatch</a> 
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end nav bar-->
+    <!-- start main content-->
+    <div class="main-content" style="border: 0;">
+        <!-- start table of contents -->
+        <div class="toc">
+            <button onclick="accordion('acc-section1')" class="acc-btn accent"><img class="acc-arrow" src="../images/arrow_down.svg">Section 1 - Prep Work</button>
+            <div id="acc-section1" class="acc-hide">
+                <ul> 
+                    <li><p><a href="#tools">1.1 - Tools Needed </a></p></li>
+                    <li><p><a href="#requirements">1.2 - On-site Requirements</a></p></li>
+                </ul>
+            </div>
+            <button onclick="accordion('acc-section2')" class="acc-btn accent"><img class="acc-arrow" src="../images/arrow_down.svg">Section 2 - Configuration</button>
+            <div id="acc-section2" class="acc-hide">
+                <ul> 
+                    <li><p><a href="#lockdown">2.1 - Lock Down</a></p></li>
+                    <li><p><a href="#personalize">2.2 - Personalization</a></p></li>
+                    <li><p><a href="#storeaccount">2.3 - Store Account Setup</a></p></li>
+                </ul>
+            </div>
+            <button onclick="accordion('acc-section3')" class="acc-btn accent"><img class="acc-arrow" src="../images/arrow_down.svg">Section 3 - Validation</button>
+            <div id="acc-section3" class="acc-hide">
+                <ul> 
+                    <li><p><a href="#testprint">3.1 - Test Print</a></p></li>
+                    <li><p><a href="#testemail">3.2 - Test Email</a></p></li>
+                    <li><p><a href="#cleanup">3.3 - Cleanup</a></p></li>
+                </ul>
+            </div>
+            <button onclick="accordion('acc-section4')" class="acc-btn accent"><img class="acc-arrow" src="../images/arrow_down.svg">Appendix</button>
+            <div id="acc-section4" class="acc-hide">
+                <ul> 
+                    <li><p><a href="#terminology">A1 - Terminology</a></p></li>
+                    <li><p><a href="#photos">A2 - Photos</a></p></li>
+                    <li><p><a href="#updates">A3 - Change Log</a></p></li>
+                </ul>
+            </div>
+        </div>
+        <!-- end table of contents -->
+        <!-- start doc content -->
+        <div class="doc-content">
+            <div id="doc-top">
+                <h1>Back Office PC Configuration</h1>
+            </div>
+            <div class="section-heading">Section 1 - Prep Work</div>
+            <span id="tools" class="anchor"></span>
+            <div class="subsection">
+                1.1 - Applicable Tools
+            </div>
+            <div class="items">
+                <p>The following tools will be used during setup of a Back Office PC</p>
+                <ol>
+                    <li><strong>Cisco Jabber - </strong>used to call the store and/or vendor tech.</li>
+                    <li><strong>IVY - </strong>used to assign a static network host address to the PC. Also known as "locking down".</li>
+                    <li><strong>UltraVNC - </strong>used to connect to the PC remotely to perform the setup steps.</li>
+                    <li><strong>PingInfoView - </strong> used to watch the dhcp range for a new device coming online.</li>
+                </ol>
+            </div>
+            <span id="requirements" class="anchor"></span>
+            <div class="subsection">
+                1.2 - On-site Requirements
+            </div>
+            <div class="items">
+                <p>The following criteria will need to be met in the store in order to perform Back Office PC setup.</p>
+                <ol>
+                    <li id="onsite1"><input class="checkbox" type="checkbox" onclick="checkBox('onsite1');">Store personnel (or vendor technician) available to install new device.</li>
+                    <li id="onsite2"><input class="checkbox" type="checkbox" onclick="checkBox('onsite2');">Device located.</li>
+                    <li id="onsite3"><input class="checkbox" type="checkbox" onclick="checkBox('onsite3');">Device plugged into power.</li>
+                    <li id="onsite4"><input class="checkbox" type="checkbox" onclick="checkBox('onsite4');">Device plugged into network.</li>
+                    <li id="onsite5"><input class="checkbox" type="checkbox" onclick="checkBox('onsite5');">Keyboard, mouse, and monitor plugged in.</li>
+                </ol>
+            </div>
+            <div class="section-heading">Section 2 - Configuration</div>
+            <span id="lockdown" class="anchor"></span>
+            <div class="subsection">
+                2.1 - Lock Down PC
+            </div>
+            <div class="items">
+                <p>Use IVY to assign the new device a static network host name.</p>
+                <ol>
+                    <li>Open PingInfoView and enter dhcp01.st0###.st.coat.com to find the IP address for that store's dhcp01 host name.</li>
+                    <li>Enter that IP address in instead of the full FQDN, and then add a hyphen and the same IP address, but with .16 as the last octet instead of .1
+                        <ul><li>Example: dhcp01.st00681.st.coat.com returns an IP address of 10.11.205.1, so you would enter 10.11.205.1-10.11.205.16 into PingInfoView.</li></ul>
+                    </li>
+                    <li>Have the vendor tech (or store associate) power on the device and watch for one of the listed DHCP addresses to come online in PingInfoView.</li>
+                    <li>Use that host address to connect to the device in UltraVNC and verify with the vendor tech that it is the correct device.</li>
+                    <li>Open a command window on the device and enter the following command:<br /> <code>getmac</code></li>
+                    <li><a href="https://plocalert1.burlington.com:85/" target="_blank">Open IVY</a> and log in with your <span class="keyword"><img src="../images/search.svg">SSO </span> credentials.</li>
+                    <li>Use the top search bar to search for the store in question</li>
+                    <li>Find the host name that you're going to be locking the device in question down with, and enter the device's MAC address into the host name entry.</li>
+                    <li>In the command window on the device, enter the following command:<br /> <code>ipconfig /release && ipconfig /renew</code></li>
+                    <li>If the device don't refresh its connection to use the static host instead of the dhcp host, have the vendor tech reboot the device.</li>
+                </ol>
+            </div>
+            <span id="personalize" class="anchor"></span>
+            <div class="subsection">
+                2.2 - Personalization
+            </div>
+            <div class="items">
+                <p><span class="keyword"><img src="../images/search.svg">Personalization</span> is the part of the setup that involves setting up this device as a specific PC at a specific store, rather than a clone of a generic device.</p>
+                <ol>
+                    <li>Through VNC, open an <span class="keyword"><img src="../images/search.svg">elevated command prompt</span> and enter: <code>c:\scripts\setup.bat</code></li>
+                    <li>Use the form below to determine how to name the PC.<br /> 
+                        <fieldset id="determine-pcname">
+                            <legend>Determine PC Name</legend>
+                            <form>
+                                <label for="pcname-choice">PC:<br /></label>
+                                <input list="pcname" id="pcname-choice" name="pcname-choice">    
+                                    <datalist id="pcname">
+                                        <option value="managerpc"></option>
+                                        <option value="districtpc"></option>
+                                        <option value="deptmgr01"></option>
+                                        <option value="recv01"></option>
+                                        <option value="recv02"></option>
+                                        <option value="recv03"></option>
+                                        <option value="recv04"></option>
+                                        <option value="recv05"></option>
+                                        <option value="train01"></option>
+                                        <option value="train02"></option>
+                                        <option value="train03"></option>
+                                        <option value="train04"></option>
+                                    </datalist><br />
+                                <label for="storenum">Store Number:</label><br />
+                                <input type="text" id="storenum" name="storenum"><br />
+                            </form>
+                            <label for="pcname-output">PC Name:</label><br />
+                            <input type="text" value="" id="pcname-output" name="pcname-output"><br />
+                            <span id="copied"></span><br />
+                            <input class="button-pcname" type="submit" value="Submit" onclick="namePC()" onsubmit="return false"> <button class="button-pcname" onclick="toClipboard()">Copy</button>
+                        </fieldset>
+                    </li>
+                </ol>
+            </div>
+            <div class="scroll"></div>
+        </div>
+        <!-- end doc content -->
+    </div>
+    <!-- end main content -->
+    <footer>
+        <div class="footer-link">Site designed and coded by Jon Burke.</div>
+        <div class="footer-link"><a href="#top"><img class="footer-icon" src="../images/top.svg"></a></div>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/home.js"></script>
+    <script type="text/javascript" src="../js/docs.js"></script>
+</body>
+
+</html>
